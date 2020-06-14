@@ -1,10 +1,11 @@
-{% extends 'blog/index.html' %}
 {% load static %}
+
 <html class="no-js" lang="en">
-<head>
+  
+  <head>
 
     <!--- basic page needs
-    ================================================== -->
+	================================================== -->
     <meta charset="utf-8">
     <title>Hanyue's Blog</title>
     <meta name="description" content="">
@@ -30,194 +31,250 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+  </head>
 
-</head>
-
-<body>
+  <body>
 
     <!-- preloader
-    ================================================== -->
+	 ================================================== -->
     <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+      <div id="loader" class="dots-fade">
+	<div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
 
     <div id="top" class="s-wrap site-wrapper">
 
         <!-- site header
-        ================================================== -->
-        <header class="s-header">
+             ================================================== -->
+	<header class="s-header">
+	  
+	  <div class="header__top">
+	    
+	    <div class="header__logo">
+	      
+	      <a class="site-logo" href="{% url 'index' %}">
+		
+		<img src="{% static 'images/logo.png' %}" alt="Homepage">
+		
+	      </a>
+	      
+	    </div>
 
-            <div class="header__top">
-                <div class="header__logo">
-                    <a class="site-logo" href="{% url 'index' %}">
-                        <img src="{% static 'images/logo.svg' %}" alt="Homepage">
-                    </a>
-                </div>
+	    <div class="header__search">
+	      
+	      <form role="search" method="get" class="header__search-form" action="#">
+		<label>
+		  
+		  <span class="hide-content">Search for:</span>
+		  
+		  <input type="search" class="header__search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+		  
+		</label>
+		
+		<input type="submit" class="header__search-submit" value="Search">
+		
+	      </form>
+	      
+	      <a href="#0" title="Close Search" class="header__search-close">Close</a>
+	    </div>  <!-- end header__search -->
 
-                <div class="header__search">
-    
-                    <form role="search" method="get" class="header__search-form" action="#">
-                        <label>
-                            <span class="hide-content">Search for:</span>
-                            <input type="search" class="header__search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
-                        </label>
-                        <input type="submit" class="header__search-submit" value="Search">
-                    </form>
-        
-                    <a href="#0" title="Close Search" class="header__search-close">Close</a>
-        
-                </div>  <!-- end header__search -->
+	    <!-- toggles -->
+	    <a href="#0" class="header__search-trigger"></a>
+	    
+	    <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
 
-                <!-- toggles -->
-                <a href="#0" class="header__search-trigger"></a>
-                <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+	  </div> <!-- end header__top -->
 
-            </div> <!-- end header__top -->
+	  <nav class="header__nav-wrap">
 
-            <nav class="header__nav-wrap">
+	    <ul class="header__nav">
 
-                <ul class="header__nav">
-                    <li class="current"><a href="{% url 'index' %}" title="">Home</a></li>
-                    <li><a href="{% url 'content' 1 %}" title="">Blog</a></li>
-		    <li><a href="{% url 'cv' %}" title="">CV</a></li>
-		    <li><a href="{% url 'about' %}" title="">About</a></li>
-		    
-                </ul> <!-- end header__nav -->
+	      <li class="current"><a href="{% url 'index' %}" title="">Home</a></li>
+	      <li><a href="{% url 'content' 1 %}" title="">Blog</a></li>
 
-                <ul class="header__social">
-                    <li class="ss-facebook">
-                        <a href="https://facebook.com/">
-                            <span class="screen-reader-text">Facebook</span>
-                        </a>
-                    </li>
-                    <li class="ss-twitter">
-                        <a href="#0">
-                            <span class="screen-reader-text">Twitter</span>
-                        </a>
-                    </li>
-                </ul>
+	      <li><a href="{% url 'cv' %}" title="">CV</a></li>
 
-            </nav> <!-- end header__nav-wrap -->
+	      <li><a href="{% url 'about' %}" title="">About</a></li>
 
-        </header> <!-- end s-header -->
+	    </ul> <!-- end header__nav -->
+
+	    <ul class="header__social">
+
+	      <li class="ss-facebook">
+
+		<a href="https://facebook.com/">
+		  <span class="screen-reader-text">Facebook</span>
+		</a>
+
+	      </li>
+
+	      <li class="ss-twitter">
+
+		<a href="#0">
+		  <span class="screen-reader-text">Twitter</span>
+		</a>
+
+	      </li>
+
+	    </ul>
+
+	  </nav> <!-- end header__nav-wrap -->
+
+	</header> <!-- end s-header -->
 	
-        <!-- site content
-        ================================================== -->
-        <div class="s-content content">
-            <main class="row content__page">
-                
-                <section class="column large-full entry format-standard">
+<!-- site content================================================== -->
 
-                    <div class="media-wrap">
-                        <div>
-                            <img src="images/thumbs/contact/contact-1000.jpg" srcset="images/thumbs/contact/contact-2000.jpg 2000w, 
-                                      images/thumbs/contact/contact-1000.jpg 1000w, 
-                                      images/thumbs/contact/contact-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-                        </div>
-                    </div>
+<div class="s-content content">
 
-                    <div class="content__page-header">
-                        <h1 class="display-1">
-                        Get In Touch.
-                        </h1>
-                    </div> <!-- end content__page-header -->
+  <main class="row content__page">
+    
+    <section class="column large-full entry format-standard">
 
-                    <p class="lead drop-cap">
-                    Duis ex ad cupidatat tempor Excepteur cillum cupidatat 
-                    fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation 
-                    incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor 
-                    dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui 
-                    labore cillum sit in tempor veniam consequat non laborum adipisicing aliqua 
-                    ea nisi sint.
-                    </p>
+      <div class="media-wrap">
 
-                    <p>
-                    Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat 
-                    dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit 
-                    id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit 
-                    nulla ullamco magna amet magna cupidatat qui labore cillum sit in tempor veniam 
-                    consequat non laborum adipisicing aliqua ea nisi sint ut quis proident ullamco ut 
-                    dolore culpa occaecat ut laboris in sit minim cupidatat ut dolor voluptate enim 
-                    veniam consequat occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim 
-                    aliqua laborum mollit quis nostrud sed sed.
-                    </p>
+	<div>
 
-                    <div class="row">
-                        <div class="column large-six tab-full">
-                            <h4>Where to Find Us</h4>
-    
-                            <p>
-                            1600 Amphitheatre Parkway<br>
-                            Mountain View, CA<br>
-                            94043 US
-                            </p>
-    
-                        </div>
-    
-                        <div class="column large-six tab-full">
-                            <h4>Contact Info</h4>
-    
-                            <p>sayhello@typerite.com<br>
-                            info@typerite.com <br>
-                            Phone: +197 543 2345
-                            </p>
-    
-                        </div>
-                    </div>
+	  <img src="images/thumbs/contact/contact-1000.jpg" srcset="images/thumbs/contact/contact-2000.jpg 2000w, images/thumbs/contact/contact-1000.jpg 1000w, images/thumbs/contact/contact-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+	</div>
 
-                    <h3 class="h2">Say Hello</h3>
-        
-                    <form name="contactForm" id="contactForm" method="post" action="" autocomplete="off">
-                        <fieldset>
-    
-                            <div class="form-field">
-                                <input name="cName" id="cName" class="full-width" placeholder="Your Name" value="" type="text">
-                            </div>
-    
-                            <div class="form-field">
-                                <input name="cEmail" id="cEmail" class="full-width" placeholder="Your Email" value="" type="text">
-                            </div>
-    
-                            <div class="form-field">
-                                <input name="cWebsite" id="cWebsite" class="full-width" placeholder="Website" value="" type="text">
-                            </div>
-    
-                            <div class="message form-field">
-                                <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message"></textarea>
-                            </div>
-    
-                            <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Send Message" type="submit">
-    
-                        </fieldset>
-                    </form> <!-- end form -->
+      </div>
 
-                </section>
+      <div class="content__page-header">
 
-            </main>
+	<h1 class="display-1">ZHANG Hanyue</h1>
 
-        </div> <!-- end s-content -->
+      </div>
+      
+      <!-- end content__page-header -->
 
+      <div class="row">
 
+	<div class="column large-six tab-full">
+
+	  <h4>EDUCATION</h4>
+
+	  <p>Beijing Language and Culture University (BLCU), Haidian, Beijing, Computer Science.
+	<br>University of Birmingham, Birmingham, U.K, MSci Computer Science.</p>
+	  
+	</div>
+
+      </div>
+
+      <div class="row">
+
+	<div class="column large-six tab-full">
+
+	  <h4>AWARDS</h4>
+
+	  <p>2nd Prize Scholarship, October 2018
+	<br>Individual Scholarship of Professional Learning, October 2019</p>
+	  
+	</div>
+
+      </div>
+
+      <div class="row">
+
+	<div class="column large-six tab-full">
+
+	  <h4>RELATED EXPERIENCE</h4>
+	  <p><b>Python teaching/research, Wecode, Beijing</b>
+	<br>March 2020 - September 2020
+	<br>Responsible for the design, planning and implementation of python programming courses for children; Converted programming topics into accessible courses; Updated and iterated courses; Improved course quality.
+	<br><b>Administrator, China National Offshore Oil Corporation (CNOOC), Beijing</b>
+	<br>January 2019 - March 2019
+	<br>Maintained the company profile on social media platforms; Negotiated with office equipment suppliers and service providers; Freelance website project.
+	<br><b>We-Media blogger</b>
+	<br>June 2017 - now
+	<br>Daily management and execution of all social media content; Website layout and content design; Development and implementation of various communication strategies for affiliates.</p>
+	  
+	</div>
+
+      </div>
+
+      <div class="row">
+
+	<div class="column large-six tab-full">
+
+	  <h4>OTHER EXPERIENCE</h4>
+
+	  <p><b>Student Union</b>
+	<br>Worked as a member of the student union in BLCU, cooperated with more than 200 people, helped with organising school events.
+	<br><b>Software Engineering Project</b>
+	<br>Participated in the Beijing students' entrepreneurship project and established a team of four, acted as team leader. Constructed prototype for a phone application which allows user to get access to a virtual self-study room with checkin mode. The team won the Excellence Award.
+	<br>Participated in the software engineering project in University of Birmingham, established a team of seven, acted as a team member. Constructed prototype of a psychological consultation app. The app uses big data, natural language processing and innovative design to connect users with psychological counsellors through VR to provide psychological counselling feedback.
+	<br><b>Video Game Design</b>
+	<br>Participated in game development project in University of Birmingham, established a team of six, acted as a team member. Responsible for the user interface of the game using Java language in the game development process.
+	<br><b>Website Design</b>
+	<br>Designed personal blog using Django.</p>
+	  
+	</div>
+
+      </div>
+
+      <div class="row">
+
+	<div class="column large-six tab-full">
+
+	  <h4>ADDITIONAL SKILLS</h4>
+
+	  <p>C, C++, Java, Python, Perl, HTML, CSS,
+	<br>Microsoft Office Suite,
+	<br>Adobe Photoshop, Adobe Premiere, Adobe Dreamweaver,
+	<br>Mother tongue Chinese, fluent in English.</p>
+	  
+	</div>
+
+      </div>
+
+      <div class="row">
+
+	<div class="column large-six tab-full">
+
+	  <h4>Contact Me</h4>
+
+	  <p>hannahzhang1030@gmail.com</p>
+	  
+	</div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<!-- end s-content -->
+	
         <!-- footer
         ================================================== -->
-        <footer class="s-footer footer">
-            <div class="row">
-                <div class="column large-full footer__content">
-                    <div class="footer__copyright">
-                        <span>© Copyright Typerite 2019</span> 
-                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
-                    </div>
-                </div>
-            </div>
+        <footer class="s-footer">
 
-            <div class="go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top"></a>
-            </div>
-        </footer>
+	  <div class="row">
+
+	    <div class="column large-full footer__content">
+
+	      <div class="footer__copyright">
+
+		<span>Made by Hanyue Zhang</span>
+
+	      </div>
+
+	    </div>
+
+	  </div>
+
+	  <div class="go-top">
+
+	    <a class="smoothscroll" title="Back to Top" href="#top"></a>
+
+	  </div>
+
+	</footer>
 
     </div> <!-- end s-wrap -->
 
@@ -228,4 +285,6 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-</body>
+  </body>
+
+</html>
