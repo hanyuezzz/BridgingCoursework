@@ -55,7 +55,7 @@
 	    
 	    <div class="header__logo">
 	      
-	      <a class="site-logo" href="{% url 'index' %}">
+	      <a class="site-logo" href="{% url 'post_list' %}">
 		
 		<img src="{% static 'images/logo.png' %}" alt="Homepage">
 		
@@ -92,8 +92,8 @@
 
 	    <ul class="header__nav">
 
-	      <li class="current"><a href="{% url 'index' %}" title="">Home</a></li>
-	      <li><a href="{% url 'content' 1 %}" title="">Blog</a></li>
+	      <li class="current"><a href="/" title="">Home</a></li>
+	      <li><a href="{% url 'post_list' %}" title="">Blog</a></li>
 
 	      <li><a href="{% url 'cv' %}" title="">CV</a></li>
 

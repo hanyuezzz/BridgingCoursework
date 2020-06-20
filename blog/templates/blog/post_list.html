@@ -93,7 +93,7 @@
 	    <ul class="header__nav">
 
 	      <li class="current"><a href="/" title="">Home</a></li>
-	      <li><a href="{% url 'post_list' %}" title="">Blog</a></li>
+	      <li><a href="{% url 'post_list'  %}" title="">Blog</a></li>
 
 	      <li><a href="{% url 'cv' %}" title="">CV</a></li>
 
@@ -125,51 +125,46 @@
 
 	</header> <!-- end s-header -->
 	
-<!-- site content================================================== -->
 
-<div class="s-content content">
+	        <!-- site content
+		     ================================================== -->
+	{% block content %}
+	{% for post in posts %}
+	
+	<div class="s-content">
 
-  <main class="row content__page">
+	  <div class="masonry-wrap">
 
-    <section class="column large-full entry format-standard">
+	    <div class="masonry">
 
-      <div class="content__page-header">
+	      <div class="content container">
 
-	<h1 class="display-1">Hello, I am Hanyue.</h1>
+		<div class="row">
 
-      </div> <!-- end content__page-header -->
+		  <div class="col-md-8">
+		    
+		    <div class="category"><p>{{ post.category }}</p></div>
+		    
+                    <h3 class="title"><a href="{% url 'post_content' pk=post.pk %}">{{ post.title }}</a></h3>
+		    
+		    <p class="text">{{ post.text_snippet|linebreaksbr }}</p>
 
-      <hr>
+		  </div>
 
-      <div class="row block-large-1-2 block-tab-full">
+		</div>
 
-	<div class="column">
+	      </div>
 
-	  <h2>What Is This?</h2>
+	    </div> <!-- end masonry -->
 
-	  <p><br>This is a personal blog designed as a piece of university coursework.</br><br>The blog contains blogs and Hanyue's personal CV.</p>
-	  <p><a href="/" class="btn btn-default" target="_blank">View Homepage</a></p>
+	  </div> <!-- end masonry-wrap -->
 
-	</div>
+        </div> <!-- end s-content -->
 
-	<div class="column">
+	{% endfor %}
 
-	  <h2>Source Code:</h2>
+	{% endblock %}
 
-	  <p><br>This blog is made by Hanyue using Django.</br><br>The source code for my blog can be found on Github.</br></p>
-	  <p><a href="https://github.com/hanyuezzz/BridgingCoursework" class="btn btn-default" target="_blank">View Github</a></p>
-
-	</div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-</div>
-
-<!-- end s-content -->
 
         <!-- footer
         ================================================== -->
@@ -209,4 +204,3 @@
   </body>
 
 </html>
-	
