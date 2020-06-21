@@ -125,8 +125,9 @@
 
 	</header> <!-- end s-header -->
 	
-<!-- site content================================================== -->
+	<!-- site content================================================== -->
 
+	
 <div class="s-content content">
 
   <main class="row content__page">
@@ -154,10 +155,13 @@
 
 	<div class="column large-six tab-full">
 
-	  <h4>EDUCATION</h4>
-
-	  <p>Beijing Language and Culture University (BLCU), Haidian, Beijing, Computer Science.
-	<br>University of Birmingham, Birmingham, U.K, MSci Computer Science.</p>
+	<h5 class="cv-title"><span>Education</span></h5>
+	<ul id="education-list" class="cv-list">
+	  {% for ed in educations %}
+	  <li>{{ ed.title }} <a href="{% url 'education_remove' pk=ed.pk %}"><i class="fa fa-times"></i></a></li>
+	  {% endfor %}
+	</ul>
+	<a class="btn btn-default" href="{% url 'education_new' %}" id="add-education">ADD</a>
 	  
 	</div>
 
@@ -167,10 +171,13 @@
 
 	<div class="column large-six tab-full">
 
-	  <h4>AWARDS</h4>
-
-	  <p>2nd Prize Scholarship, October 2018
-	<br>Individual Scholarship of Professional Learning, October 2019</p>
+	<h5 class="cv-title"><span>Achievements</span></h5>
+	<ul id="achievement-list" class="cv-list">
+	  {% for ac in achievements %}
+	  <li>{{ ac.title }} <a href="{% url 'achievement_remove' pk=ac.pk %}"><i class="fa fa-times"></i></a></li>
+	  {% endfor %}
+	</ul>
+	<a class="btn btn-default" href="{% url 'achievement_new' %}" id="add-achievement">ADD</a>
 	  
 	</div>
 
@@ -180,16 +187,13 @@
 
 	<div class="column large-six tab-full">
 
-	  <h4>RELATED EXPERIENCE</h4>
-	  <p><b>Python teaching/research, Wecode, Beijing</b>
-	<br>March 2020 - September 2020
-	<br>Responsible for the design, planning and implementation of python programming courses for children; Converted programming topics into accessible courses; Updated and iterated courses; Improved course quality.
-	<br><b>Administrator, China National Offshore Oil Corporation (CNOOC), Beijing</b>
-	<br>January 2019 - March 2019
-	<br>Maintained the company profile on social media platforms; Negotiated with office equipment suppliers and service providers; Freelance website project.
-	<br><b>We-Media blogger</b>
-	<br>June 2017 - now
-	<br>Daily management and execution of all social media content; Website layout and content design; Development and implementation of various communication strategies for affiliates.</p>
+	<h5 class="cv-title"><span>Skills</span></h5>
+	<ul id="skill-list" class="cv-list">
+	  {% for skill in skills %}
+	  <li>{{ skill.title }} <a href="{% url 'skill_remove' pk=skill.pk %}"><i class="fa fa-times"></i></a></li>
+          {% endfor %}
+	</ul>
+	<a class="btn btn-default" href="{% url 'skill_new' %}" id="add-skill">ADD</a>
 	  
 	</div>
 
@@ -198,33 +202,14 @@
       <div class="row">
 
 	<div class="column large-six tab-full">
-
-	  <h4>OTHER EXPERIENCE</h4>
-
-	  <p><b>Student Union</b>
-	<br>Worked as a member of the student union in BLCU, cooperated with more than 200 people, helped with organising school events.
-	<br><b>Software Engineering Project</b>
-	<br>Participated in the Beijing students' entrepreneurship project and established a team of four, acted as team leader. Constructed prototype for a phone application which allows user to get access to a virtual self-study room with checkin mode. The team won the Excellence Award.
-	<br>Participated in the software engineering project in University of Birmingham, established a team of seven, acted as a team member. Constructed prototype of a psychological consultation app. The app uses big data, natural language processing and innovative design to connect users with psychological counsellors through VR to provide psychological counselling feedback.
-	<br><b>Video Game Design</b>
-	<br>Participated in game development project in University of Birmingham, established a team of six, acted as a team member. Responsible for the user interface of the game using Java language in the game development process.
-	<br><b>Website Design</b>
-	<br>Designed personal blog using Django.</p>
 	  
-	</div>
-
-      </div>
-
-      <div class="row">
-
-	<div class="column large-six tab-full">
-
-	  <h4>ADDITIONAL SKILLS</h4>
-
-	  <p>C, C++, Java, Python, Perl, HTML, CSS,
-	<br>Microsoft Office Suite,
-	<br>Adobe Photoshop, Adobe Premiere, Adobe Dreamweaver,
-	<br>Mother tongue Chinese, fluent in English.</p>
+	<h5 class="cv-title"><span>Courses</span></h5>
+	<ul id="course-list" class="cv-list">
+	  {% for course in courses %}
+	  <li>{{ course.title }} <a href="{% url 'course_remove' pk=course.pk %}"><i class="fa fa-times"></i></a></li>
+	  {% endfor %}
+	</ul>
+	<a class="btn btn-default" href="{% url 'course_new' %}" id="add-course">ADD</a>
 	  
 	</div>
 
@@ -247,6 +232,8 @@
   </main>
 
 </div>
+
+{% if user.is_authenticated %}{% endif %}
 
 <!-- end s-content -->
 	
