@@ -46,7 +46,7 @@ def course_new(request):
 def course_remove(request, pk):
     return cv_remove(request, Course, pk)
 
-def cv_login(request, _ModelForm):
+def cv_new(request, _ModelForm):
     if request.method == 'POST':
         form = _ModelForm(request.POST)
         if form.is_valid():
@@ -54,7 +54,7 @@ def cv_login(request, _ModelForm):
             return redirect('cv')
     else:
         form = _ModelForm()
-    return render(request, 'cv/cv_login.html', {'form': form})
+    return render(request, 'cv/cv_new.html', {'form': form})
 
 def cv_remove(request, _Model, pk):
     instance = get_object_or_404(_Model, pk=pk)

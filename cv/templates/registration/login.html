@@ -126,7 +126,27 @@
 	</header> <!-- end s-header -->
 	
 	<!-- site content================================================== -->
+	
+	<div class="s-content content">
 
+  <main class="row content__page">
+    
+    <section class="column large-full entry format-standard">
+
+      <div class="media-wrap">
+
+	<div>
+
+	  <img src="images/thumbs/contact/contact-1000.jpg" srcset="images/thumbs/contact/contact-2000.jpg 2000w, images/thumbs/contact/contact-1000.jpg 1000w, images/thumbs/contact/contact-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+	</div>
+
+      </div>
+
+      <div class="content__page-header">
+
+	<h1 class="display-1">Log In</h1>
+
+      </div>
 	{% if form.errors %}
         <p>Your username and password doesn't match. Please try again.</p>
 	{% endif %}
@@ -146,6 +166,12 @@
         <input class="btn btn-default" type="submit" value="login" />
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
+
+        </section>
+
+  </main>
+
+</div>
 
 <!-- end s-content -->
 	
