@@ -149,8 +149,7 @@
 	<h4>Education</h4>
 	<ul id="achievement-list" class="cv-list">
 	  {% for ac in achievements %}
-	  <li>{{ ac.title }} <a href="{% url 'achievement_remove' pk=ac.pk %}"> [x] <i class="fa fa-times"></i></a></li>
-	  {{ac.date}}
+	  <li>{{ ac.title }}<a href="{% url 'achievement_remove' pk=ac.pk %}"> [x] <i class="fa fa-times"></i></a><br>{{ac.date}}</li>
 	  {% endfor %}
 	</ul>
 	<a class="btn btn-default" href="{% url 'achievement_new' %}" id="add-achievement">ADD</a>
@@ -198,8 +197,7 @@
 	<h4>Experience</h4>
 	<ul id="education-list" class="cv-list">
 	  {% for ed in educations %}
-	  <li>{{ ed.title }}<a href="{% url 'education_remove' pk=ed.pk %}"> [x] <i class="fa fa-times"></i></a></li>
-	  {{ed.description}}
+	  <li>{{ ed.title }}<a href="{% url 'education_remove' pk=ed.pk %}"> [x] <i class="fa fa-times"></i></a><br>{{ed.description}}</li>
 	  {% endfor %}
 	</ul>
 	<a class="btn btn-default" href="{% url 'education_new' %}" id="add-education">ADD</a>
