@@ -156,12 +156,13 @@
 	<div class="column large-six tab-full">
 
 	<h5 class="cv-title"><span>Education</span></h5>
-	<ul id="education-list" class="cv-list">
-	  {% for ed in educations %}
-	  <li>{{ ed.title }} <a href="{% url 'education_remove' pk=ed.pk %}"><i class="fa fa-times"></i></a></li>
+	<ul id="achievement-list" class="cv-list">
+	  {% for ac in achievements %}
+	  <li>{{ ac.title }} <a href="{% url 'achievement_remove' pk=ac.pk %}"> [x] <i class="fa fa-times"></i></a></li>
+	  {{ac.date}}
 	  {% endfor %}
 	</ul>
-	<a class="btn btn-default" href="{% url 'education_new' %}" id="add-education">ADD</a>
+	<a class="btn btn-default" href="{% url 'achievement_new' %}" id="add-achievement">ADD</a>
 	  
 	</div>
 
@@ -170,14 +171,14 @@
       <div class="row">
 
 	<div class="column large-six tab-full">
-
+	  
 	<h5 class="cv-title"><span>Achievements</span></h5>
-	<ul id="achievement-list" class="cv-list">
-	  {% for ac in achievements %}
-	  <li>{{ ac.title }} <a href="{% url 'achievement_remove' pk=ac.pk %}"><i class="fa fa-times"></i></a></li>
+	<ul id="course-list" class="cv-list">
+	  {% for course in courses %}
+	  <li>{{ course.title }} <a href="{% url 'course_remove' pk=course.pk %}"> [x] <i class="fa fa-times"></i></a></li>
 	  {% endfor %}
 	</ul>
-	<a class="btn btn-default" href="{% url 'achievement_new' %}" id="add-achievement">ADD</a>
+	<a class="btn btn-default" href="{% url 'course_new' %}" id="add-course">ADD</a>
 	  
 	</div>
 
@@ -190,7 +191,7 @@
 	<h5 class="cv-title"><span>Skills</span></h5>
 	<ul id="skill-list" class="cv-list">
 	  {% for skill in skills %}
-	  <li>{{ skill.title }} <a href="{% url 'skill_remove' pk=skill.pk %}"><i class="fa fa-times"></i></a></li>
+	  <li>{{ skill.title }} <a href="{% url 'skill_remove' pk=skill.pk %}"> [x] <i class="fa fa-times"></i></a></li>
           {% endfor %}
 	</ul>
 	<a class="btn btn-default" href="{% url 'skill_new' %}" id="add-skill">ADD</a>
@@ -202,14 +203,15 @@
       <div class="row">
 
 	<div class="column large-six tab-full">
-	  
-	<h5 class="cv-title"><span>Courses</span></h5>
-	<ul id="course-list" class="cv-list">
-	  {% for course in courses %}
-	  <li>{{ course.title }} <a href="{% url 'course_remove' pk=course.pk %}"><i class="fa fa-times"></i></a></li>
+
+	<h5 class="cv-title"><span>Experience</span></h5>
+	<ul id="education-list" class="cv-list">
+	  {% for ed in educations %}
+	  <li>{{ ed.title }}<a href="{% url 'education_remove' pk=ed.pk %}"> [x] <i class="fa fa-times"></i></a></li>
+	  {{ed.description}}
 	  {% endfor %}
 	</ul>
-	<a class="btn btn-default" href="{% url 'course_new' %}" id="add-course">ADD</a>
+	<a class="btn btn-default" href="{% url 'education_new' %}" id="add-education">ADD</a>
 	  
 	</div>
 

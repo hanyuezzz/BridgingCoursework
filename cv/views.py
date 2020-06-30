@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 def cv(request):
     return render(request, 'cv/cv.html', {
-        'education': Education.objects.all(),
+        'educations': Education.objects.all(),
         'achievements': Achievement.objects.all(),
         'skills': Skill.objects.all(),
         'courses': Course.objects.all(),
