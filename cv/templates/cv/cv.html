@@ -134,15 +134,6 @@
     
     <section class="column large-full entry format-standard">
 
-      <div class="media-wrap">
-
-	<div>
-
-	  <img src="images/thumbs/contact/contact-1000.jpg" srcset="images/thumbs/contact/contact-2000.jpg 2000w, images/thumbs/contact/contact-1000.jpg 1000w, images/thumbs/contact/contact-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-	</div>
-
-      </div>
-
       <div class="content__page-header">
 
 	<h1 class="display-1">ZHANG Hanyue</h1>
@@ -155,7 +146,7 @@
 
 	<div class="column large-six tab-full">
 
-	<h5 class="cv-title"><span>Education</span></h5>
+	<h4>Education</h4>
 	<ul id="achievement-list" class="cv-list">
 	  {% for ac in achievements %}
 	  <li>{{ ac.title }} <a href="{% url 'achievement_remove' pk=ac.pk %}"> [x] <i class="fa fa-times"></i></a></li>
@@ -172,7 +163,7 @@
 
 	<div class="column large-six tab-full">
 	  
-	<h5 class="cv-title"><span>Achievements</span></h5>
+	<h4>Achievements</h4>
 	<ul id="course-list" class="cv-list">
 	  {% for course in courses %}
 	  <li>{{ course.title }} <a href="{% url 'course_remove' pk=course.pk %}"> [x] <i class="fa fa-times"></i></a></li>
@@ -188,7 +179,7 @@
 
 	<div class="column large-six tab-full">
 
-	<h5 class="cv-title"><span>Skills</span></h5>
+	<h4>Skills</h4>
 	<ul id="skill-list" class="cv-list">
 	  {% for skill in skills %}
 	  <li>{{ skill.title }} <a href="{% url 'skill_remove' pk=skill.pk %}"> [x] <i class="fa fa-times"></i></a></li>
@@ -204,7 +195,7 @@
 
 	<div class="column large-six tab-full">
 
-	<h5 class="cv-title"><span>Experience</span></h5>
+	<h4>Experience</h4>
 	<ul id="education-list" class="cv-list">
 	  {% for ed in educations %}
 	  <li>{{ ed.title }}<a href="{% url 'education_remove' pk=ed.pk %}"> [x] <i class="fa fa-times"></i></a></li>
