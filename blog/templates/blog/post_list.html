@@ -92,12 +92,18 @@
 
 	    <ul class="header__nav">
 
-	      <li class="current"><a href="{% url 'about' %}" title="">Home</a></li>
-	      <li><a href="{% url 'post_list'  %}" title="">Blog</a></li>
-
+	      <li><a href="{% url 'about' %}" title="">Home</a></li>
+	      
 	      <li><a href="{% url 'cv' %}" title="">CV</a></li>
-
-	      <li><a href="{% url 'about' %}" title="">About</a></li>
+	      
+	      <li><a href="{% url 'post_list'  %}" title="">Blog</a></li>
+	      	                                  {% if user.is_authenticated %}
+                                <li><a href="{% url 'post_new' %}">New Post</a>
+                                <li><a href="{% url 'post_draft_list' %}">Draft List</a></li>
+                                <li><a href="{% url 'logout' %}">Log out</a></li>
+                            {% else %}
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
 
 	    </ul> <!-- end header__nav -->
 

@@ -91,7 +91,8 @@
 	  <nav class="header__nav-wrap">
 
 	    <ul class="header__nav">
-	      	      <li><a href="{% url 'about' %}" title="">Home</a></li>
+
+	      <li><a href="{% url 'about' %}" title="">Home</a></li>
 	      
 	      <li><a href="{% url 'cv' %}" title="">CV</a></li>
 	      
@@ -130,40 +131,42 @@
 
 	</header> <!-- end s-header -->
 	
-	<!-- site content================================================== -->
-<div class="s-content content">
 
-  <main class="row content__page">
-    
-    <section class="column large-full entry format-standard">
+	        <!-- site content
+		     ================================================== -->
+	<div class="s-content">
 
-      <div class="media-wrap">
+	  <div class="masonry-wrap">
 
-	<div>
+	    <div class="masonry">
 
-	  <img src="images/thumbs/contact/contact-1000.jpg" srcset="images/thumbs/contact/contact-2000.jpg 2000w, images/thumbs/contact/contact-1000.jpg 1000w, images/thumbs/contact/contact-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
-	</div>
+	      <div class="content container">
 
-      </div>
+		<div class="row">
 
-      <div class="content__page-header">
+		  <div class="col-md-8">
+		    
+		    {% block content %}
+    <h2>Create/edit post</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
 
-	<h1 class="display-1">Create New</h1>
+		  </div>
 
-      </div>
-	<form method="POST" class="post-form">
-	  {% csrf_token %}
-	  {{ form.as_p }}
-	  <button type="submit" class="save btn btn-default">Create</button>
-	</form>
-    </section>
+		</div>
 
-  </main>
+	      </div>
 
-</div>
+	    </div> <!-- end masonry -->
 
-<!-- end s-content -->
-	
+	  </div> <!-- end masonry-wrap -->
+
+        </div> <!-- end s-content -->
+
+
         <!-- footer
         ================================================== -->
         <footer class="s-footer">
